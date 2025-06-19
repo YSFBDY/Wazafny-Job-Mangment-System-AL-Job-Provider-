@@ -52,10 +52,10 @@ class SeekerJobPostController extends Controller
                 return response()->json(['message' => 'Seeker not found'], 404);
             }
 
-            if(Application::where('job_id', $job_id)->where('seeker_id', $seeker_id)->first()) {
-                $applystatus = true;
+            if(Application::where('job_id', $job_id)->where('seeker_id', $seeker_id)->where('status',"!=", 'Rejected')->exists()) {
+                $applystatus = true; //applied
             }else {
-                $applystatus = false;
+                $applystatus = false; //can apply
             }
         }
 
