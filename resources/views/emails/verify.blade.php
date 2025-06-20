@@ -42,7 +42,7 @@
             padding: 12px 24px;
             margin-top: 20px;
             font-size: 18px;
-            color: white;
+            color: white !important; /* Add !important */
             background-color: #6A0DAD;
             border-radius: 6px;
             text-decoration: none;
